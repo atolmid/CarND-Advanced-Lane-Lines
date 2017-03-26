@@ -36,6 +36,8 @@ The goals / steps of this project are the following:
 [image16]: ./output_images/lane_drawn_challenge.png "Draw lanes Challenge"
 [image17]: ./output_images/lane_drawn_test.png "Draw lanes Test"
 [image18]: ./output_images/thresholds_shade.png "Thresholds Shade"
+[image19]: ./output_images/warped_shade.png "Warped Shade"
+[image20]: ./output_images/pipeline_shade.png "Pipeline Output with Shade"
 [video1]: ./project_video.mp4 "Video"
 [video2]: ./output_project_video.mp4 "Video"
 
@@ -111,6 +113,9 @@ Here's an example of my output for this step.  (note: this is not actually from 
 * Pipeline Output:
 ![alt text][image11]
 
+* Things are of ourse a biyt more complicated, when there is a lot of shadow in the image:
+![alt text][image20]
+
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 The code for my perspective transform includes a function called `corners_unwarp(img, corners, nx, ny, mtx, dist)`.
@@ -138,6 +143,9 @@ An example can be seen in the following images:
 
 * One of the straight lines images
 ![alt text][image13]
+
+* And one using the images that are harder to detect the lines in, due to the existence of shadow
+![alt text][image19]
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
@@ -194,7 +202,7 @@ Several other of the parameters are defined for these specific images, and will 
 Thus, one of the things that need to be done, is consider how this could be changed.
 The lanes in the video are mostly correctly detected and drawn, however in the challenge videos the results were not equally good, which means I have to revisit the process at a latter ti,e in order to make improvements.
 
-The main problem was in the case of shade, and light reflection.
+The main problem was in the case of shadow, and light reflection.
 In the shaded area for example, the HSV threshold included almost all shaded region, which extremely distorted the final outcome.
 
 An example can be seen in the next image:
