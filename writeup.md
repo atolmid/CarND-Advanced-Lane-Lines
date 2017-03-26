@@ -33,6 +33,9 @@ The goals / steps of this project are the following:
 [image13]: ./output_images/warped_straight_lines.png "Perspective transform - Straight Lines"
 [image14]: ./output_images/lines_on_thresh.png "perspective transform 3"
 [image15]: ./output_images/draw_lanes.png "Draw lanes"
+[image16]: ./output_images/lane_drawn_challenge.png "Draw lanes Challenge"
+[image17]: ./output_images/lane_drawn_test.png "Draw lanes Test"
+[image18]: ./output_images/thresholds_shade.png "Thresholds Shade"
 [video1]: ./project_video.mp4 "Video"
 [video2]: ./output_project_video.mp4 "Video"
 
@@ -190,3 +193,16 @@ Finding working source and destination points was also something that took some 
 Several other of the parameters are defined for these specific images, and will probably not work well on much different ones.
 Thus, one of the things that need to be done, is consider how this could be changed.
 The lanes in the video are mostly correctly detected and drawn, however in the challenge videos the results were not equally good, which means I have to revisit the process at a latter ti,e in order to make improvements.
+
+The main problem was in the case of shade, and light reflection.
+In the shaded area for example, the HSV threshold included almost all shaded region, which extremely distorted the final outcome.
+
+An example can be seen in the next image:
+
+![alt text][image18]
+
+A way of dealing with it was first to include a threshold using red from RGB, and also limiting the H in HSV to (170, 190)
+This improved things, however there is still plenty of room for improvement:
+
+![alt text][image16]
+![alt text][image17]
