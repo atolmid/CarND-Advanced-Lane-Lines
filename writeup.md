@@ -210,7 +210,7 @@ An example can be seen in the next image:
 ![alt text][image18]
 
 A way of dealing with it was first to include a threshold using red from RGB, and also limiting the H in HSV to (170, 190)
-This improved things, however there is still plenty of room for improvement:
+This improved things, as well as fixing a bug that led to not taking into account the gradient thresholds.
+Additionally, tha bottom 60 pixels of the images were discarded, as thew were just picturing part of the front of the car.
+Changing the sliding window margin to 50 pixels from 100, as well as the minimum number of pixels from 50 to 25, also seem to improve lane lines detection.
 
-![alt text][image16]
-![alt text][image17]
