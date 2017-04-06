@@ -36,7 +36,7 @@ The goals / steps of this project are the following:
 [image16]: ./output_images/lane_drawn_challenge.png "Draw lanes Challenge"
 [image17]: ./output_images/lane_drawn_test.png "Draw lanes Test"
 [image18]: ./output_images/thresholds_shade.png "Thresholds Shade"
-[image19]: ./output_images/warped_shade.png "Warped Shade"
+[image19]: ./output_images/camera_undistort.png "Camera Undistortion"
 [image20]: ./output_images/pipeline_shade.png "Pipeline Output with Shade"
 [video1]: ./project_video.mp4 "Video"
 [video2]: ./output_project_video.mp4 "Video"
@@ -74,6 +74,10 @@ I created a function called 'undist' that uses `cv2.undistort()` function and ou
 The output for one of the test images can be seen in the following figure:
 
 ![alt text][image2]
+
+In the following image the result of applying the same function to one of the camera calibration images is displayed:
+
+![alt text][image19]
 
 ###Pipeline (single images)
 
